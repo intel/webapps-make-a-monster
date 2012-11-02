@@ -1,7 +1,7 @@
 Make A Monster
 A monster making tool for young mad scientists.
 
-Author: todd.e.brandt@intel.com
+Author/Owner: Todd Brandt <todd.e.brandt@intel.com>
 
 This application is written using HTML5/css3 and is
 distributed under Apache2.0 license.
