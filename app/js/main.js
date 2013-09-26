@@ -318,4 +318,6 @@ MakeAMonster.prototype.menuButtonSave = function() {
 window.addEventListener('load', function () {
     "use strict";
     var main = new MakeAMonster();
+
+    scaleBody(document.getElementsByTagName("body")[0], 720);
 });
