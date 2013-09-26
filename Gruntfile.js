@@ -33,6 +33,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'build/app/js/main.js': ['app/js/main.js'],
+          'build/app/js/image.js': ['app/js/image.js'],
           'build/app/js/gallery.js': ['app/js/gallery.js'],
           'build/app/js/license.js': ['app/js/license.js'],
           'build/app/js/webappcommon.js': ['app/js/webappcommon.js'],
@@ -46,7 +47,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'build/app/css/main.css': ['app/css/main.css'],
-          'build/app/css/i18n.css': ['app/css/i18n.css']
+          'build/app/css/license.css': ['app/css/license.css']
         }
       }
     },
@@ -57,7 +58,7 @@ module.exports = function (grunt) {
           { expand: true, cwd: '.', src: ['app/lib/**'], dest: 'build/' },
           { expand: true, cwd: '.', src: ['app/audio/**'], dest: 'build/' },
           { expand: true, cwd: '.', src: ['LICENSE'], dest: 'build/app/' },
-          { expand: true, cwd: '.', src: ['README.txt'], dest: 'build/app/' },
+          { expand: true, cwd: '.', src: ['app/README.txt'], dest: 'build/' },
           { expand: true, cwd: '.', src: ['app/_locales/**'], dest: 'build/' }
         ]
       },
