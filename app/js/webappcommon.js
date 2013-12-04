@@ -35,11 +35,11 @@
 *       val (float) - audio level from 0 to 1.0, 0 for mute, 1 for full volume
 *
 * TextScroller Functionality: 
-*    Function name: webappCommon.createTextScroller(divid, file, style)
+*    Function name: webappCommon.createTextScroller(divid, style)
 *    Description: 
-*       returns an object which handles autoscrolling a text file within a
-*       div element (such as a README or LICENSE). See the definition of the
-*       webappCommon.TextScroller object below.
+*       returns an object which handles autoscrolling text within a
+*       div element. See the definition of the webappCommon.TextScroller
+*       object below.
 *
 * Touch to Mouse Functionality: 
 *    Function name: webappCommon.isMouseOrTouch()
@@ -77,8 +77,8 @@ var webappCommon = {
             }
         }
     },
-    createTextScroller: function(divid, file, style) {
-        return new webappCommon.TextScroller(divid, file, style);
+    createTextScroller: function(divid, style) {
+        return new webappCommon.TextScroller(divid, style);
     },
     isMouseOrTouch: function() {
         if(("ontouchstart" in window)&&
@@ -265,7 +265,6 @@ webappCommon.Sound.prototype.unmute = function() {
 *    gets to the end, pausing for a few seconds at top and bottom.
 * Required arguments: 
 *    divid (string) - the id of the div element you want the text to be in
-*    file (string) - the file path of the text file (e.g. "README.txt")
 * Optional arguments:
 *    style (string) - css styling for the text, will be appended to the style
 *        tag of the container that gets inserted into divid.
@@ -284,7 +283,7 @@ webappCommon.Sound.prototype.unmute = function() {
 *        stops the autoscroll, should be called if the text isn't in view since
 *        timers waste a bit of cpu
 ******************************************************************************/
-webappCommon.TextScroller = function(divid, file, style)
+webappCommon.TextScroller = function(divid, style)
 {
     var self = this;
     var id = "webapp_textscroll";

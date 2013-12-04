@@ -13,7 +13,7 @@ function license_init(id, hpageid)
     var qbtn = document.getElementById(id+"btnq");
     var lpage = document.getElementById(id+"page");
     var hpage = document.getElementById(hpageid);
-    var lscroll = webappCommon.createTextScroller(id+"text", "README.txt");
+    var lscroll = webappCommon.createTextScroller(id+"text");
 
     lbtn.onclick = function() {
         /* display the license page, hide the other */
