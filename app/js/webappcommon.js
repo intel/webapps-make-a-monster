@@ -301,31 +301,7 @@ webappCommon.TextScroller = function(divid, file, style)
     var element = '<div id="'+id+'" style="'+css+'"></div>';
 
     this.parentdiv = document.getElementById(divid);
-    this.parentdiv.innerHTML = element;
     this.textview = document.getElementById(id);
-
-    var request = new XMLHttpRequest();
-    request.open("GET", file, false);
-    request.onload = function(e) {
-        var text = this.responseText;
-        text = text.replace("<","&lt;");
-        text = text.replace(">","&gt;");
-        var lines = text.split("\n");
-        lines[0] = "<br><br><h1>"+lines[0]+"</h1>";
-        for(var i in lines)
-        {
-            if(lines[i].match(/--------------------/))
-            {
-                lines[i] = "";
-            }
-            else
-            {
-                lines[i] += "<br>";
-            }
-        }
-        self.textview.innerHTML = lines.join("\n");
-    }
-    request.send();
 }
 
 webappCommon.TextScroller.prototype.start = function(downspeed, upspeed, pausetime) {
