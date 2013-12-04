@@ -35,7 +35,7 @@
 *       val (float) - audio level from 0 to 1.0, 0 for mute, 1 for full volume
 *
 * TextScroller Functionality: 
-*    Function name: webappCommon.createTextScroller(divid, style)
+*    Function name: webappCommon.createTextScroller(divid)
 *    Description: 
 *       returns an object which handles autoscrolling text within a
 *       div element. See the definition of the webappCommon.TextScroller
@@ -77,8 +77,8 @@ var webappCommon = {
             }
         }
     },
-    createTextScroller: function(divid, style) {
-        return new webappCommon.TextScroller(divid, style);
+    createTextScroller: function(divid) {
+        return new webappCommon.TextScroller(divid);
     },
     isMouseOrTouch: function() {
         if(("ontouchstart" in window)&&
@@ -265,9 +265,6 @@ webappCommon.Sound.prototype.unmute = function() {
 *    gets to the end, pausing for a few seconds at top and bottom.
 * Required arguments: 
 *    divid (string) - the id of the div element you want the text to be in
-* Optional arguments:
-*    style (string) - css styling for the text, will be appended to the style
-*        tag of the container that gets inserted into divid.
 *
 * [Member functions]
 *    Function name: start(downspeed, upspeed, pausetime)
@@ -283,21 +280,10 @@ webappCommon.Sound.prototype.unmute = function() {
 *        stops the autoscroll, should be called if the text isn't in view since
 *        timers waste a bit of cpu
 ******************************************************************************/
-webappCommon.TextScroller = function(divid, style)
+webappCommon.TextScroller = function(divid)
 {
     var self = this;
     var id = "webapp_textscroll";
-    var css = "position: relative;";
-    var textstyle = "font: 25px/100% Arial, Helvetica, sans-serif;text-align: center;";
-    if(style == undefined)
-    {
-        css += "font: 25px/100% Arial, Helvetica, sans-serif;text-align: center;";
-    }
-    else
-    {
-        css += style;
-    }
-    var element = '<div id="'+id+'" style="'+css+'"></div>';
 
     this.parentdiv = document.getElementById(divid);
     this.textview = document.getElementById(id);
