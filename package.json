@@ -1,6 +1,6 @@
 {
   "name": "MakeAMonster",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A monster making tool for young mad scientists.",
   "main": "app/index.html",
   "scripts": {
